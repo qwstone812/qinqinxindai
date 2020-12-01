@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="9GP-aJ-a4r" customClass="QFLC_JinBiCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9GP-aJ-a4r" id="rAn-iD-XcI">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="邀请好友" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOh-bn-uBh">
+                        <rect key="frame" x="16" y="12" width="57.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UA5-Dc-7ei">
+                        <rect key="frame" x="278" y="11" width="27" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019年05月12日  15:29" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5a-b1-JNY">
+                        <rect key="frame" x="16" y="37" width="121" height="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="oOh-bn-uBh" firstAttribute="top" secondItem="rAn-iD-XcI" secondAttribute="top" constant="12" id="0hd-M1-eiS"/>
+                    <constraint firstItem="oOh-bn-uBh" firstAttribute="leading" secondItem="rAn-iD-XcI" secondAttribute="leading" constant="16" id="MEw-XF-6nf"/>
+                    <constraint firstItem="x5a-b1-JNY" firstAttribute="top" secondItem="oOh-bn-uBh" secondAttribute="bottom" constant="8" id="Mzw-VF-bHw"/>
+                    <constraint firstItem="x5a-b1-JNY" firstAttribute="leading" secondItem="oOh-bn-uBh" secondAttribute="leading" id="b4f-xH-yLE"/>
+                    <constraint firstAttribute="trailing" secondItem="UA5-Dc-7ei" secondAttribute="trailing" constant="15" id="e4d-ej-wFM"/>
+                    <constraint firstAttribute="bottom" secondItem="x5a-b1-JNY" secondAttribute="bottom" constant="12" id="kgD-rq-xgR"/>
+                    <constraint firstItem="UA5-Dc-7ei" firstAttribute="centerY" secondItem="oOh-bn-uBh" secondAttribute="centerY" id="zcF-or-bBe"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="s7i-3o-CdC"/>
+            <connections>
+                <outlet property="dateL" destination="x5a-b1-JNY" id="v0c-LE-l0d"/>
+                <outlet property="goldL" destination="UA5-Dc-7ei" id="vRr-Sz-bY7"/>
+                <outlet property="nameL" destination="oOh-bn-uBh" id="Jqt-Hs-4M7"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="84"/>
+        </tableViewCell>
+    </objects>
+</document>

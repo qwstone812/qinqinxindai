@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="KGk-i7-Jjw" customClass="rechargeOrderCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="92"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="91.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mine_rechargeOrder_cellBg" translatesAutoresizingMaskIntoConstraints="NO" id="kFH-AC-yQi">
+                        <rect key="frame" x="17" y="5" width="341" height="86.5"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwd-aj-tny">
+                        <rect key="frame" x="46" y="13" width="31" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.69019607839999997" green="0.69019607839999997" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4s-a3-ADg">
+                        <rect key="frame" x="310" y="13" width="31" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.69019607839999997" green="0.69019607839999997" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTv-v6-PVA">
+                        <rect key="frame" x="45" y="55.5" width="48" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9K-9b-MHj">
+                        <rect key="frame" x="301.5" y="58.5" width="39.5" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDy-Ou-XNM">
+                        <rect key="frame" x="35" y="63" width="8" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="p9K-9b-MHj" secondAttribute="trailing" constant="18" id="1wt-oK-N9Q"/>
+                    <constraint firstItem="OTv-v6-PVA" firstAttribute="leading" secondItem="RDy-Ou-XNM" secondAttribute="trailing" constant="2" id="3d7-iT-DaT"/>
+                    <constraint firstItem="q4s-a3-ADg" firstAttribute="centerY" secondItem="nwd-aj-tny" secondAttribute="centerY" id="8Gq-4P-9XB"/>
+                    <constraint firstAttribute="trailing" secondItem="kFH-AC-yQi" secondAttribute="trailing" constant="17" id="8k4-Gq-uyt"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="OTv-v6-PVA" secondAttribute="bottom" constant="1.5" id="9Vy-jR-gdZ"/>
+                    <constraint firstItem="kFH-AC-yQi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="E5N-42-FOQ"/>
+                    <constraint firstItem="kFH-AC-yQi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="17" id="KZg-Ap-S1y"/>
+                    <constraint firstItem="nwd-aj-tny" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="SdS-fk-zpo"/>
+                    <constraint firstItem="nwd-aj-tny" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="30" id="SwV-xN-XfT"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="RDy-Ou-XNM" secondAttribute="bottom" constant="3.5" id="bH4-nn-t27"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="q4s-a3-ADg" secondAttribute="trailing" constant="18" id="fFj-tK-f7u"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="p9K-9b-MHj" secondAttribute="bottom" constant="3" id="mdR-8J-vnN"/>
+                    <constraint firstItem="RDy-Ou-XNM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="19" id="y5W-VI-Kz5"/>
+                    <constraint firstAttribute="bottom" secondItem="kFH-AC-yQi" secondAttribute="bottom" id="ywb-sA-rsD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="moneyLabel" destination="OTv-v6-PVA" id="CqI-k9-ThJ"/>
+                <outlet property="paymentMethodLabel" destination="q4s-a3-ADg" id="Pm8-aK-lmi"/>
+                <outlet property="paymentStatus" destination="p9K-9b-MHj" id="VTH-ZE-KKK"/>
+                <outlet property="timeLabel" destination="nwd-aj-tny" id="ZUv-ei-JMz"/>
+            </connections>
+            <point key="canvasLocation" x="104.8" y="70.164917541229386"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="mine_rechargeOrder_cellBg" width="341" height="92"/>
+    </resources>
+</document>

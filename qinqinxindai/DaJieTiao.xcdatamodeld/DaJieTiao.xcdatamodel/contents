@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="DSMOrder" representedClassName="DSMOrder" syncable="YES" codeGenerationType="class">
+        <attribute name="age" optional="YES" attributeType="String"/>
+        <attribute name="city" optional="YES" attributeType="String"/>
+        <attribute name="cost" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="discount" optional="YES" attributeType="String"/>
+        <attribute name="gender" optional="YES" attributeType="String"/>
+        <attribute name="gongjijin" optional="YES" attributeType="String"/>
+        <attribute name="income" optional="YES" attributeType="String"/>
+        <attribute name="job" optional="YES" attributeType="String"/>
+        <attribute name="labels" optional="YES" attributeType="String"/>
+        <attribute name="money" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="phone" optional="YES" attributeType="String"/>
+        <attribute name="purpose" optional="YES" attributeType="String"/>
+        <attribute name="salary" optional="YES" attributeType="String"/>
+        <attribute name="shebao" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <attribute name="term" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="DSMOrder" positionX="-54" positionY="99" width="128" height="313"/>
+    </elements>
+</model>
