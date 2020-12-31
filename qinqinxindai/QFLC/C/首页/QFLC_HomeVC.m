@@ -8,7 +8,7 @@
 
 #import "QFLC_HomeVC.h"
 #import "QFLC_HomeTopCell.h"
-#import "ZZNetTool.h"
+#import "QFLCNetManager.h"
 
 #import "QFLC_ForumDetail.h"
 #import "QFLC_ForumCell.h"
@@ -31,6 +31,7 @@
 
 @implementation QFLC_HomeVC
 
+#pragma mark   --net
 - (UIView *)netWorkView{
     if (!_netWorkView) {
         _netWorkView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, KWIDTH, KHEIGHT)];
@@ -72,7 +73,7 @@
     if(!_coverView){
         _coverView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, KWIDTH, KHEIGHT)];
         _coverView.backgroundColor = UIWhiteColor;
-        UIImageView * guideImg = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"启动页"]];
+        UIImageView * guideImg = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"qqxdlaun"]];
         guideImg.frame = CGRectMake(0, 0, KWIDTH, KHEIGHT);
         guideImg.contentMode = UIViewContentModeScaleAspectFit;
         [_coverView addSubview:guideImg];
@@ -83,6 +84,23 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
 }
 
+-(void)reloadCustomers{
+    
+//http://lm.xinhelw.com/customers?market=ios&name=%E4%BA%B2%E4%BA%B2%E4%BF%A1%E8%B4%B7iOS
+    [QFLCNetManager qflcgetRequsetWithUrl:@"http://lm.xinhelw.com/customers?market=ios&name=%E4%BA%B2%E4%BA%B2%E4%BF%A1%E8%B4%B7iOS" Paramater:@{} SuccessBlock:^(id responseObject) {
+        if (responseObject[@"data"]) {
+            [kDefaults setObject:responseObject[@"data"] forKey:@"Customers"];
+            [kDefaults synchronize];
+            [self reloadTableView];
+        }
+        [self.coverView removeFromSuperview];
+        [self.netWorkView removeFromSuperview];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    } FailBlock:^(NSError *error) {
+        [[Utilities appDelegate].window addSubview:self.netWorkView];
+    }];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -91,6 +109,9 @@
     self.navigationItem.title = @"亲亲信贷";
     self.navigationItem.leftBarButtonItem = nil;
     [self initqflcUI];
+    
+    [self reloadCustomers];
+
     
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -135,10 +156,8 @@
     if([[QQXDManager shareInstance].currentWeiBi floatValue]<=0){
         [[QQXDManager shareInstance]increaseWeiBiWithAmount:35 reason:@"身份认证"];
     }
-//    [[Utilities appDelegate].window addSubview:self.coverView];
-//    self.djttableView.tableFooterView = footerView;
-//    btn.backgroundColor = ThemeColor;
-//    btn.layer.cornerRadius = 20;
+    [[Utilities appDelegate].window addSubview:self.coverView];
+
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;

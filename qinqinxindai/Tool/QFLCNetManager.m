@@ -1,14 +1,14 @@
 //
-//  ZZNetTool.m
-//  XiaoHengPuHuiJieTiao
+//  QFLCNetManager.m
+//  qinqinxindai
 //
-//  Created by Miley on 2020/9/29.
+//  Created by zrmac on 3.12.20.
 //  Copyright © 2020 Eiu. All rights reserved.
 //
 
-#import "ZZNetTool.h"
+#import "QFLCNetManager.h"
 
-@implementation ZZNetTool
+@implementation QFLCNetManager
 //首页新闻列表
 +(void)dkk_PostRequsetWithUrl:(NSString *)urlString Paramater:(NSDictionary *)param SuccessBlock:(SuccessBlock)successBlock FailBlock:(FailBlock)failBlock{
     
@@ -32,7 +32,9 @@
         
     }];
 }
-+(void)dkk_getRequsetWithUrl:(NSString*)urlString Paramater:(NSDictionary*)param SuccessBlock:(SuccessBlock)successBlock FailBlock:(FailBlock)failBlock{
++(void)qflcgetRequsetWithUrl:(NSString*)urlString Paramater:(NSDictionary*)param SuccessBlock:(SuccessBlock)successBlock FailBlock:(FailBlock)failBlock{
+    
+    
     AFHTTPSessionManager* manager = [AFHTTPSessionManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/xml",@"text/html",@"text/plain",@"application/json", nil];
     [manager.requestSerializer setValue:@"2" forHTTPHeaderField:@"terminal"];

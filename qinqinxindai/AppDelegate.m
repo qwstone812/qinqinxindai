@@ -18,7 +18,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [UMConfigure initWithAppkey:@"5fbf72031e29ca3d7be64f66" channel:@"App Store"];
+    [UMConfigure initWithAppkey:@"5fc8aec94034454d32eacdda" channel:@"App Store"];
     [IQKeyboardManager sharedManager].toolbarDoneBarButtonItemText = @"完成";
     [kDefaults setObject:@"A" forKey:@"fromType"];
     // Push组件基本功能配置
@@ -57,7 +57,7 @@
     if (![RRTool getOrderList]) {
         OrderListModel  * model = [OrderListModel new];
         model.card_id = @"202012010341";
-        model.create_time = @"2020-12-01 10:57";
+        model.create_time = @"2020-12-21 19:57";
         model.money = @"60";
         model.status = @"1";
         model.pay_type_name = @"钻石会员月卡";
@@ -67,7 +67,7 @@
         
         
         WTUserInfoModel * userinfoModel = [WTUserInfoModel new];
-        userinfoModel.huiyuanDays = [NSDate dateWithTimeIntervalSince1970:1609383432];
+        userinfoModel.huiyuanDays = [NSDate dateWithTimeIntervalSince1970:1611230220];
         
         [RRTool storeCurrentUserModel:userinfoModel];
         
