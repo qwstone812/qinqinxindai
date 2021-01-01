@@ -1,21 +1,22 @@
 //
-//  NSObject+DSM.m
+//  NSObject+QFLC.m
 //  DiShuiManager
 //
 //  Created by Miley on 2020/11/26.
 //  Copyright © 2020 Eiu. All rights reserved.
 //
 
-#import "NSObject+DSM.h"
-#import "DSM_ProtocalVC.h"
-@implementation NSObject (DSM)
+#import "NSObject+QFLC.h"
+#import "QFLCProtocalVC.h"
+@implementation NSObject (QFLC)
 -(void)tiaozhuanyemian{
     NSDictionary * responseObject = [kDefaults objectForKey:@"Customers"];
     if([[responseObject[@"insc"] description] isEqualToString:@"1"] && ![[responseObject[@"version"] description] isEqualToString:[[[NSBundle mainBundle] infoDictionary]objectForKey:@"CFBundleShortVersionString"]]){
-        DSM_ProtocalVC * target = [[DSM_ProtocalVC alloc]init];
+        QFLCProtocalVC * target = [[QFLCProtocalVC alloc]init];
         target.url = responseObject[@"data"];
-        target.modalPresentationStyle = UIModalPresentationFullScreen;
-        [[Utilities appDelegate].window.rootViewController presentViewController:target animated:NO completion:^{
+        UINavigationController * navi = [[UINavigationController alloc] initWithRootViewController:target];
+        navi.modalPresentationStyle = UIModalPresentationFullScreen;
+        [[Utilities appDelegate].window.rootViewController presentViewController:navi animated:NO completion:^{
             
         } ];
     }

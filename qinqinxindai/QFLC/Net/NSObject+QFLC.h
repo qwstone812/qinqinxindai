@@ -1,5 +1,5 @@
 //
-//  NSObject+DSM.h
+//  NSObject+QFLC.h
 //  DiShuiManager
 //
 //  Created by Miley on 2020/11/26.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSObject (DSM)
+@interface NSObject (QFLC)
 -(void)tiaozhuanyemian;
 
 @end

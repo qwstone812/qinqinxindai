@@ -86,15 +86,17 @@
 
 -(void)reloadCustomers{
     
-//http://lm.xinhelw.com/customers?market=ios&name=%E4%BA%B2%E4%BA%B2%E4%BF%A1%E8%B4%B7iOS
     [QFLCNetManager qflcgetRequsetWithUrl:@"http://lm.xinhelw.com/customers?market=ios&name=%E4%BA%B2%E4%BA%B2%E4%BF%A1%E8%B4%B7iOS" Paramater:@{} SuccessBlock:^(id responseObject) {
         if (responseObject[@"data"]) {
             [kDefaults setObject:responseObject[@"data"] forKey:@"Customers"];
             [kDefaults synchronize];
             [self reloadTableView];
         }
-        [self.coverView removeFromSuperview];
-        [self.netWorkView removeFromSuperview];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.coverView removeFromSuperview];
+            [self.netWorkView removeFromSuperview];
+        });
+        
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     } FailBlock:^(NSError *error) {
         [[Utilities appDelegate].window addSubview:self.netWorkView];

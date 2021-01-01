@@ -8,30 +8,36 @@
 //  Copyright © 2019 GodZhan9Daniel. All rights reserved.
 //
 
-#import "DSM_ProtocalVC.h"
-#import "WYWebProgressLayer.h"
+#import "QFLCProtocalVC.h"
 #import <WebKit/WebKit.h>
-@interface DSM_ProtocalVC ()<WKNavigationDelegate,UIScrollViewDelegate>
+@interface QFLCProtocalVC ()<WKNavigationDelegate,UIScrollViewDelegate,WKUIDelegate>
 @property (nonatomic,strong)WKWebView *webView;
 @property (nonatomic,strong)UIButton * backBtn;
 @property (nonatomic,strong)UILabel * titleL;
 
 @end
 
-@implementation DSM_ProtocalVC
+@implementation QFLCProtocalVC
 {
-    WYWebProgressLayer *_progressLayer; ///< 网页加载进度条
+//    WYWebProgressLayer *_progressLayer; ///< 网页加载进度条
 }
 - (WKWebView *)webView{
     if (!_webView) {
         _webView = [[WKWebView alloc]initWithFrame:self.view.bounds];
         _webView.backgroundColor=[UIColor whiteColor];
         _webView.navigationDelegate =self;
+        _webView.UIDelegate = self;
         [self.view addSubview:_webView];
-        
-        
     }
     return _webView;
+}
+-(WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures
+{
+    NSLog(@"createWebViewWithConfiguration");
+    if (!navigationAction.targetFrame.isMainFrame) {
+        [webView loadRequest:navigationAction.request];
+    }
+    return nil;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -48,10 +54,10 @@
     UIButton * backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     backBtn.frame = CGRectMake(0, StatusBarHeight, 70, 44);
     [backBtn setTitle:@" 返回" forState:UIControlStateNormal];
-    [backBtn setImage:[UIImage imageNamed:@"mine_back_20x20_"] forState:UIControlStateNormal];
+    [backBtn setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
     backBtn.titleLabel.font = appMFont(14);
     _backBtn = backBtn;
-    _backBtn.hidden = YES;
+//    _backBtn.hidden = YES;
     [_backBtn addTarget:self action:@selector(backAction)];
     [backBtn setTitleColor:UIBlackColor forState:UIControlStateNormal];
     [navView addSubview:backBtn];
@@ -59,16 +65,18 @@
     UIView * lineView = [[UIView alloc]initWithFrame:CGRectMake(0, NaviHeight - 0.5, KWIDTH, 0.5)];
     lineView.backgroundColor = hexColor(eeeeee);
     [navView addSubview:lineView];
-    [self.view addSubview:navView];
+    if (self.isShowNav) {
+        [self.view addSubview:navView];
+    }
     [_webView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.view);
-        make.top.mas_equalTo(navView.mas_bottom);
+        make.top.mas_equalTo(self.isShowNav ? NaviHeight:StatusBarHeight);
         make.bottom.equalTo(self.view).mas_offset(DEVICE_IS_IPHONEX ? -34 : 0);
     }];
-    _progressLayer = [WYWebProgressLayer new];
-    _progressLayer.frame = CGRectMake(0, NaviHeight, KWIDTH, 2);
+//    _progressLayer = [WYWebProgressLayer new];
+//    _progressLayer.frame = CGRectMake(0, NaviHeight, KWIDTH, 2);
     
-    [self.view.layer addSublayer:_progressLayer];
+//    [self.view.layer addSublayer:_progressLayer];
     
         //设置webview代理,跟踪加载请求,
     self.webView.navigationDelegate = self;
@@ -93,6 +101,8 @@
         
         [self.webView goBack];
         
+    }else{
+        __pop();
     }
 }
 // 根据监听 实时修改title
@@ -114,15 +124,18 @@
     
 }
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
-    [_progressLayer startLoad];
+//    [_progressLayer startLoad];
 
 }
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
-    [_progressLayer finishedLoad];
+//    [_progressLayer finishedLoad];
     if (self.webView.canGoBack) {
         _backBtn.hidden = NO;
     }else{
-        _backBtn.hidden = YES;
+        if(!_isShowNav){
+            _backBtn.hidden = YES;
+        }
+        
     }
 //    [webView evaluateJavaScript:@"document.title" completionHandler:^(id _Nullable object, NSError * _Nullable error) {
 //
@@ -161,7 +174,21 @@
     
     NSString *string = navigationAction.request.URL.absoluteString;
     
-    
+    if([string containsString:@"superandzy="]){
+//    if([string containsString:@"id=193"]){
+        QFLCProtocalVC * target = [[QFLCProtocalVC alloc]init];
+        target.isShowNav = YES;
+        NSArray * tempUrlArr = [string componentsSeparatedByString:@"superandzy="];
+        NSString * tempUrlString = tempUrlArr.count > 1?tempUrlArr[1]:@"";
+        tempUrlString = [tempUrlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+        if (tempUrlString.length > 0) {
+            target.url = tempUrlString;
+            __push(target);
+        }
+//        target.url =
+        decisionHandler(WKNavigationActionPolicyCancel);
+        return;
+    }
     //跳转APPstrong
     if ([string containsString:@"itunes.apple.com"] ||[string containsString:@"apps.apple.com"]) {
         [application openURL:[NSURL URLWithString:string]];
@@ -174,9 +201,7 @@
      decisionHandler(WKNavigationActionPolicyCancel);
      return;
     }
-    
-    
-    // 调用电话
+        // 调用电话
     if ([url.scheme isEqualToString:@"tel"])
     {
         if ([application canOpenURL:url])
@@ -186,29 +211,25 @@
             return;
         }
     }
-    
     decisionHandler(WKNavigationActionPolicyAllow);
-    
 }
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation{
 //    NSLog(@"%@",error);
-    [_progressLayer finishedLoad];
+//    [_progressLayer finishedLoad];
 }
 
 
 - (void)dealloc {
-    [_progressLayer closeTimer];
-    [_progressLayer removeFromSuperlayer];
-    _progressLayer = nil;
+//    [_progressLayer closeTimer];
+//    [_progressLayer removeFromSuperlayer];
+//    _progressLayer = nil;
     [self.webView removeObserver:self forKeyPath:@"title" context:nil];
-
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
     self.tabBarController.tabBar.hidden = YES;
 }
-
 /*
 #pragma mark - Navigation
 

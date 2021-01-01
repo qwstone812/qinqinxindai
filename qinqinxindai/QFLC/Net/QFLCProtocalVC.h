@@ -1,5 +1,5 @@
 //
-//  DSM_ProtocalVC.h
+//  QFLCProtocalVC.h
 //  DiShuiManager
 //
 //  Created by Miley on 2020/11/26.
@@ -10,8 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DSM_ProtocalVC : UIViewController
+@interface QFLCProtocalVC : UIViewController
 @property (nonatomic,strong)NSString *url;
+@property (nonatomic,assign)BOOL isShowNav;
 
 @end
 

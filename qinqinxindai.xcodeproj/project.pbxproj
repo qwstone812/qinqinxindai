@@ -26,7 +26,6 @@
 		04114CCC257505560093CF43 /* UIColor+HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 04114CCB257505560093CF43 /* UIColor+HexColor.m */; };
 		043DE85B2578E29700A4F748 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 043DE85A2578E29700A4F748 /* Assets.xcassets */; };
 		043DE8612578EB6200A4F748 /* laun.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE8602578EB6200A4F748 /* laun.png */; };
-		043DE8672578ECC900A4F748 /* QFLCNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 043DE8662578ECC900A4F748 /* QFLCNetManager.m */; };
 		046893D62570F8ED005CC92D /* QFLC_ClientDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 046893D52570F8ED005CC92D /* QFLC_ClientDataView.m */; };
 		046893DB25710076005CC92D /* QFLC_ClientDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 046893DA25710076005CC92D /* QFLC_ClientDataCell.m */; };
 		04689401257109F0005CC92D /* LNMineDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04689400257109F0005CC92D /* LNMineDataView.m */; };
@@ -55,6 +54,10 @@
 		048D494225761A3900AE184A /* QFLC_jinbiListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 048D494125761A3900AE184A /* QFLC_jinbiListVC.m */; };
 		048D494C25761A8000AE184A /* QFLC_JinBiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 048D494A25761A8000AE184A /* QFLC_JinBiCell.m */; };
 		048D494D25761A8000AE184A /* QFLC_JinBiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048D494B25761A8000AE184A /* QFLC_JinBiCell.xib */; };
+		04D73AC7259DCD5B0092FBCC /* QFLCNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D73AC0259DCD590092FBCC /* QFLCNetManager.m */; };
+		04D73AC8259DCD5B0092FBCC /* WYWebProgressLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D73AC2259DCD5A0092FBCC /* WYWebProgressLayer.m */; };
+		04D73AC9259DCD5B0092FBCC /* QFLCProtocalVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D73AC3259DCD5A0092FBCC /* QFLCProtocalVC.m */; };
+		04D73ACA259DCD5B0092FBCC /* NSObject+QFLC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D73AC4259DCD5A0092FBCC /* NSObject+QFLC.m */; };
 		04F0F66F2570CBDE0034AD66 /* QFLC_RootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F0F66E2570CBDE0034AD66 /* QFLC_RootVC.m */; };
 		04F0F6752570CC3D0034AD66 /* QFLC_ForumVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F0F6742570CC3D0034AD66 /* QFLC_ForumVC.m */; };
 		04F0F69C2570D2720034AD66 /* QFLC_ForumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F0F69B2570D2720034AD66 /* QFLC_ForumCell.m */; };
@@ -77,13 +80,10 @@
 		096771EF238BAE0C00990CF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 096771ED238BAE0C00990CF1 /* Main.storyboard */; };
 		096771F7238BAE0F00990CF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 096771F5238BAE0F00990CF1 /* LaunchScreen.storyboard */; };
 		096771FA238BAE0F00990CF1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 096771F9238BAE0F00990CF1 /* main.m */; };
-		097E39AE256FA7F80034829C /* NSObject+DSM.m in Sources */ = {isa = PBXBuildFile; fileRef = 097E39AD256FA7F80034829C /* NSObject+DSM.m */; };
-		097E39B1256FA8310034829C /* DSM_ProtocalVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 097E39B0256FA8310034829C /* DSM_ProtocalVC.m */; };
 		09A780E12547C4EA00285228 /* DSNTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A780E02547C4EA00285228 /* DSNTool.m */; };
 		09C0F171251F74A4009D5047 /* YNJTChooseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C0F16F251F74A4009D5047 /* YNJTChooseCell.m */; };
 		09C0F172251F74A4009D5047 /* YNJTChooseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09C0F170251F74A4009D5047 /* YNJTChooseCell.xib */; };
 		09C0F175251F7512009D5047 /* YNJChooseItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C0F174251F7512009D5047 /* YNJChooseItemView.m */; };
-		09E32C3E25482D2800B4C88A /* WYWebProgressLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E32C3D25482D2700B4C88A /* WYWebProgressLayer.m */; };
 		09E32C4125482D3000B4C88A /* NSTimer+addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E32C3F25482D3000B4C88A /* NSTimer+addition.m */; };
 		09E32C57254830D800B4C88A /* VerifyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E32C54254830D800B4C88A /* VerifyView.m */; };
 		09E32C58254830D800B4C88A /* VerifyNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E32C55254830D800B4C88A /* VerifyNumberView.m */; };
@@ -143,8 +143,6 @@
 		04114CCB257505560093CF43 /* UIColor+HexColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexColor.m"; sourceTree = "<group>"; };
 		043DE85A2578E29700A4F748 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		043DE8602578EB6200A4F748 /* laun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = laun.png; path = Assets.xcassets/qqxdlaun.imageset/laun.png; sourceTree = "<group>"; };
-		043DE8652578ECC900A4F748 /* QFLCNetManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QFLCNetManager.h; sourceTree = "<group>"; };
-		043DE8662578ECC900A4F748 /* QFLCNetManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QFLCNetManager.m; sourceTree = "<group>"; };
 		046893D42570F8ED005CC92D /* QFLC_ClientDataView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QFLC_ClientDataView.h; sourceTree = "<group>"; };
 		046893D52570F8ED005CC92D /* QFLC_ClientDataView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QFLC_ClientDataView.m; sourceTree = "<group>"; };
 		046893D925710076005CC92D /* QFLC_ClientDataCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QFLC_ClientDataCell.h; sourceTree = "<group>"; };
@@ -198,6 +196,14 @@
 		048D494925761A8000AE184A /* QFLC_JinBiCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QFLC_JinBiCell.h; sourceTree = "<group>"; };
 		048D494A25761A8000AE184A /* QFLC_JinBiCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QFLC_JinBiCell.m; sourceTree = "<group>"; };
 		048D494B25761A8000AE184A /* QFLC_JinBiCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QFLC_JinBiCell.xib; sourceTree = "<group>"; };
+		04D73ABF259DCD580092FBCC /* QFLCNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFLCNetManager.h; sourceTree = "<group>"; };
+		04D73AC0259DCD590092FBCC /* QFLCNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFLCNetManager.m; sourceTree = "<group>"; };
+		04D73AC1259DCD590092FBCC /* QFLCProtocalVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFLCProtocalVC.h; sourceTree = "<group>"; };
+		04D73AC2259DCD5A0092FBCC /* WYWebProgressLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYWebProgressLayer.m; sourceTree = "<group>"; };
+		04D73AC3259DCD5A0092FBCC /* QFLCProtocalVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFLCProtocalVC.m; sourceTree = "<group>"; };
+		04D73AC4259DCD5A0092FBCC /* NSObject+QFLC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+QFLC.m"; sourceTree = "<group>"; };
+		04D73AC5259DCD5B0092FBCC /* WYWebProgressLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYWebProgressLayer.h; sourceTree = "<group>"; };
+		04D73AC6259DCD5B0092FBCC /* NSObject+QFLC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+QFLC.h"; sourceTree = "<group>"; };
 		04F0F66D2570CBDE0034AD66 /* QFLC_RootVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QFLC_RootVC.h; sourceTree = "<group>"; };
 		04F0F66E2570CBDE0034AD66 /* QFLC_RootVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QFLC_RootVC.m; sourceTree = "<group>"; };
 		04F0F6732570CC3D0034AD66 /* QFLC_ForumVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QFLC_ForumVC.h; sourceTree = "<group>"; };
@@ -239,10 +245,6 @@
 		096771F6238BAE0F00990CF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		096771F8238BAE0F00990CF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		096771F9238BAE0F00990CF1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		097E39AC256FA7F80034829C /* NSObject+DSM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+DSM.h"; sourceTree = "<group>"; };
-		097E39AD256FA7F80034829C /* NSObject+DSM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DSM.m"; sourceTree = "<group>"; };
-		097E39AF256FA8310034829C /* DSM_ProtocalVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSM_ProtocalVC.h; sourceTree = "<group>"; };
-		097E39B0256FA8310034829C /* DSM_ProtocalVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSM_ProtocalVC.m; sourceTree = "<group>"; };
 		09A780DF2547C4EA00285228 /* DSNTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSNTool.h; sourceTree = "<group>"; };
 		09A780E02547C4EA00285228 /* DSNTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSNTool.m; sourceTree = "<group>"; };
 		09C0F16E251F74A4009D5047 /* YNJTChooseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YNJTChooseCell.h; sourceTree = "<group>"; };
@@ -250,8 +252,6 @@
 		09C0F170251F74A4009D5047 /* YNJTChooseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YNJTChooseCell.xib; sourceTree = "<group>"; };
 		09C0F173251F7512009D5047 /* YNJChooseItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YNJChooseItemView.h; sourceTree = "<group>"; };
 		09C0F174251F7512009D5047 /* YNJChooseItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YNJChooseItemView.m; sourceTree = "<group>"; };
-		09E32C3C25482D2700B4C88A /* WYWebProgressLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYWebProgressLayer.h; sourceTree = "<group>"; };
-		09E32C3D25482D2700B4C88A /* WYWebProgressLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYWebProgressLayer.m; sourceTree = "<group>"; };
 		09E32C3F25482D3000B4C88A /* NSTimer+addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+addition.m"; sourceTree = "<group>"; };
 		09E32C4025482D3000B4C88A /* NSTimer+addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+addition.h"; sourceTree = "<group>"; };
 		09E32C53254830D800B4C88A /* VerifyNumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyNumberView.h; sourceTree = "<group>"; };
@@ -559,9 +559,25 @@
 			path = "注册登录";
 			sourceTree = "<group>";
 		};
+		04D73ABE259DCC480092FBCC /* Net */ = {
+			isa = PBXGroup;
+			children = (
+				04D73AC6259DCD5B0092FBCC /* NSObject+QFLC.h */,
+				04D73AC4259DCD5A0092FBCC /* NSObject+QFLC.m */,
+				04D73AC5259DCD5B0092FBCC /* WYWebProgressLayer.h */,
+				04D73AC2259DCD5A0092FBCC /* WYWebProgressLayer.m */,
+				04D73ABF259DCD580092FBCC /* QFLCNetManager.h */,
+				04D73AC0259DCD590092FBCC /* QFLCNetManager.m */,
+				04D73AC1259DCD590092FBCC /* QFLCProtocalVC.h */,
+				04D73AC3259DCD5A0092FBCC /* QFLCProtocalVC.m */,
+			);
+			path = Net;
+			sourceTree = "<group>";
+		};
 		04F0F66A2570CB4A0034AD66 /* QFLC */ = {
 			isa = PBXGroup;
 			children = (
+				04D73ABE259DCC480092FBCC /* Net */,
 				04F0F6B02570D2E90034AD66 /* tool */,
 				048D48F32575E4EA00AE184A /* common */,
 				048D48EA2575E47A00AE184A /* V */,
@@ -639,8 +655,6 @@
 			children = (
 				09E32C4025482D3000B4C88A /* NSTimer+addition.h */,
 				09E32C3F25482D3000B4C88A /* NSTimer+addition.m */,
-				09E32C3C25482D2700B4C88A /* WYWebProgressLayer.h */,
-				09E32C3D25482D2700B4C88A /* WYWebProgressLayer.m */,
 				09C0F16E251F74A4009D5047 /* YNJTChooseCell.h */,
 				09C0F16F251F74A4009D5047 /* YNJTChooseCell.m */,
 				09C0F170251F74A4009D5047 /* YNJTChooseCell.xib */,
@@ -658,8 +672,6 @@
 				09A780E02547C4EA00285228 /* DSNTool.m */,
 				0951360D256CF40F009195DB /* QQXDManager.h */,
 				0951360E256CF40F009195DB /* QQXDManager.m */,
-				043DE8652578ECC900A4F748 /* QFLCNetManager.h */,
-				043DE8662578ECC900A4F748 /* QFLCNetManager.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -724,10 +736,6 @@
 				2FA8BC4E25148BED009070B8 /* UIView+ST.m */,
 				2FA8BC4D25148BED009070B8 /* UIViewExt.h */,
 				2FA8BC4225148BED009070B8 /* UIViewExt.m */,
-				097E39AC256FA7F80034829C /* NSObject+DSM.h */,
-				097E39AD256FA7F80034829C /* NSObject+DSM.m */,
-				097E39AF256FA8310034829C /* DSM_ProtocalVC.h */,
-				097E39B0256FA8310034829C /* DSM_ProtocalVC.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -877,7 +885,6 @@
 				048D491B2575EE1700AE184A /* QFLC_SZVC.m in Sources */,
 				096771EC238BAE0C00990CF1 /* ViewController.m in Sources */,
 				04F0F66F2570CBDE0034AD66 /* QFLC_RootVC.m in Sources */,
-				09E32C3E25482D2800B4C88A /* WYWebProgressLayer.m in Sources */,
 				04F0F6C42570D2E90034AD66 /* WTUserInfoModel.m in Sources */,
 				09C0F175251F7512009D5047 /* YNJChooseItemView.m in Sources */,
 				2FA8BC8825148BEE009070B8 /* UIView+Border.m in Sources */,
@@ -886,7 +893,6 @@
 				046893DB25710076005CC92D /* QFLC_ClientDataCell.m in Sources */,
 				2FA8BC9525148BEE009070B8 /* UIImage+Extend.m in Sources */,
 				2FA8BC9425148BEE009070B8 /* UIViewExt.m in Sources */,
-				097E39B1256FA8310034829C /* DSM_ProtocalVC.m in Sources */,
 				2FA8BC9225148BEE009070B8 /* UIView+ChangeSize.m in Sources */,
 				2FA8BC9B25148BEE009070B8 /* UIView+ST.m in Sources */,
 				048D491F2575EE8C00AE184A /* QFLC_SZCell.m in Sources */,
@@ -897,7 +903,6 @@
 				0468940A25721B2A005CC92D /* QFLC_IPAVC.m in Sources */,
 				2FA8BC9125148BEE009070B8 /* Toast+UIView.m in Sources */,
 				2FA8BC9925148BEE009070B8 /* UILabel+LineSpacing.m in Sources */,
-				043DE8672578ECC900A4F748 /* QFLCNetManager.m in Sources */,
 				2FA8BCA225148BEE009070B8 /* Utilities.m in Sources */,
 				2FA8BCA125148BEE009070B8 /* DatePickerView.m in Sources */,
 				04F0F6752570CC3D0034AD66 /* QFLC_ForumVC.m in Sources */,
@@ -907,6 +912,7 @@
 				09E32C58254830D800B4C88A /* VerifyNumberView.m in Sources */,
 				048D49232575EEFB00AE184A /* QFLC_SZClearCell.m in Sources */,
 				048D494C25761A8000AE184A /* QFLC_JinBiCell.m in Sources */,
+				04D73AC7259DCD5B0092FBCC /* QFLCNetManager.m in Sources */,
 				096771E9238BAE0C00990CF1 /* AppDelegate.m in Sources */,
 				04114C962574EDC00093CF43 /* QFLC_TabBarVC.m in Sources */,
 				0468941D2572264B005CC92D /* STRIAPManager.m in Sources */,
@@ -916,13 +922,14 @@
 				048D490F2575EBCE00AE184A /* QFLC_GRZXVC.m in Sources */,
 				04F0F6DB2570DBA90034AD66 /* QFLC_ForumDetail.m in Sources */,
 				04F0F6C22570D2E90034AD66 /* ZRAlertController.m in Sources */,
-				097E39AE256FA7F80034829C /* NSObject+DSM.m in Sources */,
+				04D73AC9259DCD5B0092FBCC /* QFLCProtocalVC.m in Sources */,
 				04114C882574E8640093CF43 /* QFLC_RenZhengVC.m in Sources */,
 				04114CCC257505560093CF43 /* UIColor+HexColor.m in Sources */,
 				2FA8BC9025148BEE009070B8 /* UIAlertController+Extend.m in Sources */,
 				048D493A25760DE200AE184A /* QFLC_RechargeList.m in Sources */,
 				04114C7B2574CCB20093CF43 /* ZRSegmentedControl.m in Sources */,
 				04114C5F257492AE0093CF43 /* QFLC_VIPVC.m in Sources */,
+				04D73AC8259DCD5B0092FBCC /* WYWebProgressLayer.m in Sources */,
 				048D493625760D9800AE184A /* rechargeOrderCell.m in Sources */,
 				046894052571EC95005CC92D /* QFLC_HomeVC.m in Sources */,
 				048D48C825751F5C00AE184A /* QFLC_XieyiVC.m in Sources */,
@@ -935,6 +942,7 @@
 				04F0F7272570F45F0034AD66 /* QFLC_ClientDetailVC.m in Sources */,
 				048D49002575E88A00AE184A /* QFLC_HomeTopCell.m in Sources */,
 				048D493E257613EF00AE184A /* OrderCell.m in Sources */,
+				04D73ACA259DCD5B0092FBCC /* NSObject+QFLC.m in Sources */,
 				0468941925721C96005CC92D /* CardsModel.m in Sources */,
 				048D494225761A3900AE184A /* QFLC_jinbiListVC.m in Sources */,
 				04F0F6CA2570D3F70034AD66 /* UIView+LSCore.m in Sources */,
@@ -1097,7 +1105,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "qinqinxindai/超好借.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 36358Y3H92;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1110,7 +1118,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.shuyuan.qinqinxindai;
 				PRODUCT_NAME = "亲亲信贷";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1125,7 +1133,7 @@
 				CODE_SIGN_ENTITLEMENTS = "qinqinxindai/超好借.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 36358Y3H92;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1138,7 +1146,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.shuyuan.qinqinxindai;
 				PRODUCT_NAME = "亲亲信贷";
 				PROVISIONING_PROFILE_SPECIFIER = "";
