@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="laun.png" translatesAutoresizingMaskIntoConstraints="NO" id="1bJ-iC-Qt3">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="qflc_laun" translatesAutoresizingMaskIntoConstraints="NO" id="1bJ-iC-Qt3">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                         </subviews>
@@ -36,6 +36,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="laun.png" width="621" height="1344"/>
+        <image name="qflc_laun" width="1242" height="2688"/>
     </resources>
 </document>

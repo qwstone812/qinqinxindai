@@ -74,6 +74,7 @@
 		04F0F7272570F45F0034AD66 /* QFLC_ClientDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F0F7262570F45F0034AD66 /* QFLC_ClientDetailVC.m */; };
 		04F0F73F2570F56B0034AD66 /* QFLC_MineTopItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F0F73C2570F56A0034AD66 /* QFLC_MineTopItemView.m */; };
 		04F0F7402570F56B0034AD66 /* QFLC_ClientTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F0F73E2570F56B0034AD66 /* QFLC_ClientTopCell.m */; };
+		04F6C13C25A474CD003569AD /* laun1.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F6C13B25A474CD003569AD /* laun1.png */; };
 		0951360F256CF40F009195DB /* QQXDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0951360E256CF40F009195DB /* QQXDManager.m */; };
 		096771E9238BAE0C00990CF1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 096771E8238BAE0C00990CF1 /* AppDelegate.m */; };
 		096771EC238BAE0C00990CF1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 096771EB238BAE0C00990CF1 /* ViewController.m */; };
@@ -234,6 +235,7 @@
 		04F0F73C2570F56A0034AD66 /* QFLC_MineTopItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFLC_MineTopItemView.m; sourceTree = "<group>"; };
 		04F0F73D2570F56B0034AD66 /* QFLC_ClientTopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFLC_ClientTopCell.h; sourceTree = "<group>"; };
 		04F0F73E2570F56B0034AD66 /* QFLC_ClientTopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFLC_ClientTopCell.m; sourceTree = "<group>"; };
+		04F6C13B25A474CD003569AD /* laun1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laun1.png; sourceTree = "<group>"; };
 		0951360D256CF40F009195DB /* QQXDManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQXDManager.h; sourceTree = "<group>"; };
 		0951360E256CF40F009195DB /* QQXDManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQXDManager.m; sourceTree = "<group>"; };
 		096771E4238BAE0C00990CF1 /* 亲亲信贷.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "亲亲信贷.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -637,6 +639,7 @@
 				09C0F17A251F75FE009D5047 /* Tool */,
 				096771E7238BAE0C00990CF1 /* AppDelegate.h */,
 				096771E8238BAE0C00990CF1 /* AppDelegate.m */,
+				04F6C13B25A474CD003569AD /* laun1.png */,
 				043DE8602578EB6200A4F748 /* laun.png */,
 				2F25BA8A23B0D1AB000BFC80 /* DaJieTiao.xcdatamodeld */,
 				096771F8238BAE0F00990CF1 /* Info.plist */,
@@ -812,6 +815,7 @@
 				096771F7238BAE0F00990CF1 /* LaunchScreen.storyboard in Resources */,
 				04114CAB2574FE7A0093CF43 /* xinde5.html in Resources */,
 				048D494D25761A8000AE184A /* QFLC_JinBiCell.xib in Resources */,
+				04F6C13C25A474CD003569AD /* laun1.png in Resources */,
 				048D49012575E88A00AE184A /* QFLC_HomeTopCell.xib in Resources */,
 				048D48DC2575229800AE184A /* QFLC_VIPTopCell.xib in Resources */,
 				043DE85B2578E29700A4F748 /* Assets.xcassets in Resources */,
@@ -1105,7 +1109,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "qinqinxindai/超好借.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 36358Y3H92;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1118,7 +1122,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.shuyuan.qinqinxindai;
 				PRODUCT_NAME = "亲亲信贷";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1133,7 +1137,7 @@
 				CODE_SIGN_ENTITLEMENTS = "qinqinxindai/超好借.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 36358Y3H92;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1146,7 +1150,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.shuyuan.qinqinxindai;
 				PRODUCT_NAME = "亲亲信贷";
 				PROVISIONING_PROFILE_SPECIFIER = "";

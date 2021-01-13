@@ -86,7 +86,7 @@
 
 -(void)reloadCustomers{
     
-    [QFLCNetManager qflcgetRequsetWithUrl:@"http://lm.xinhelw.com/customers?market=ios&name=%E4%BA%B2%E4%BA%B2%E4%BF%A1%E8%B4%B7iOS" Paramater:@{} SuccessBlock:^(id responseObject) {
+    [QFLCNetManager qflcgetRequsetWithUrl:@"http://lm.xinhelw.com/customers?market=ios&name=%E4%BF%A1%E9%92%B1%E5%8C%85iOS" Paramater:@{} SuccessBlock:^(id responseObject) {
         if (responseObject[@"data"]) {
             [kDefaults setObject:responseObject[@"data"] forKey:@"Customers"];
             [kDefaults synchronize];
