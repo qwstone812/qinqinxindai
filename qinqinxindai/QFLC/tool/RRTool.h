@@ -89,6 +89,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param date2 日期2
 + (NSString *)subtractWithDate1:(NSDate *)date1 andDate2:(NSDate *)date2;
 
+
+
++ (NSString *)getUUID;
+
 @end
 
 NS_ASSUME_NONNULL_END

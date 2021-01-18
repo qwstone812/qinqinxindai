@@ -7,6 +7,7 @@
 //
 
 #import "RRTool.h"
+#import <AdSupport/AdSupport.h>
 
 @implementation RRTool
 
@@ -228,5 +229,15 @@
     
     return [NSString stringWithFormat:@"%ld",days];
 }
+
+
++ (NSString *)getUUID
+{
+    if([[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled]){
+        return [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    }
+    return [UIDevice currentDevice].identifierForVendor.UUIDString;
+}
+
 
 @end

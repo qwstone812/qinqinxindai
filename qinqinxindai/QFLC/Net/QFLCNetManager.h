@@ -15,10 +15,16 @@ typedef void(^SuccessBlock)(id responseObject);
 typedef void(^FailBlock)(NSError* error);
 
 @interface QFLCNetManager : NSObject
+
++ (void)getSmsCodeWithUrl:(NSString*)urlString Paramater:(NSDictionary*)param SuccessBlock:(SuccessBlock)successBlock FailBlock:(FailBlock)failBlock;
+
+
 //首页列表
 +(void)qflcPostRequsetWithUrl:(NSString*)urlString Paramater:(NSDictionary*)param SuccessBlock:(SuccessBlock)successBlock FailBlock:(FailBlock)failBlock;
 //首页列表
 +(void)qflcgetRequsetWithUrl:(NSString*)urlString Paramater:(NSDictionary*)param SuccessBlock:(SuccessBlock)successBlock FailBlock:(FailBlock)failBlock;
+
+
 
 
 @end

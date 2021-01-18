@@ -7,7 +7,7 @@
 //
 
 #import "QFLC_TabBarVC.h"
-
+#import "QFLC_Login2VC.h"
 #import "QFLC_DengLuVC.h"
 
 @interface QFLC_TabBarVC ()<UITabBarControllerDelegate>
@@ -27,6 +27,36 @@
         [instance init_DYQCTabBarC];
     });
     return instance;
+}
+
+
+
+
+
+
+-(void)setupChilds{
+    _array = [NSMutableArray array];
+
+
+    
+    
+    NSArray * tabItems = @[
+    @{@"name":@"DWOtherOneVC",@"title":@"首页",@"image":@"dyqctabbar_unshouyeshouye",@"selectedImg":@"dyqctabbar_shouyeshouye"},
+    @{@"name":@"DWOtherTwoVC",@"title":@"全部",@"image":@"dyqctabbar_unkehu",@"selectedImg":@"dyqctabbar_kehu"},
+    @{@"name":@"DWOtherThreeVC",@"title":@"我的",@"image":@"tabbar_wanzhang",@"selectedImg":@"tabbar_wanzhang"},
+    ];
+    
+    
+        for (NSDictionary * dic in tabItems) {
+            UIViewController * vc = [[NSClassFromString(dic[@"name"]) alloc]init];
+            vc.tabBarItem.title = dic[@"title"];
+            vc.tabBarItem.image = [UIImage imageNamed:dic[@"image"]];;
+    //        vc.tabBarItem.selectedImage = [[UIImage imageNamed:dic[@"selectedImg"]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];;
+            //    [selImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+            
+            [_array addObject:[[UINavigationController alloc]initWithRootViewController:vc]];
+        }
+        [self setViewControllers:_array animated:NO];
 }
 
 - (void)init_DYQCTabBarC{
@@ -72,7 +102,7 @@
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
     if (![Utilities checkIsLogin]) {
         if ([tabBarController.viewControllers indexOfObject:viewController] == 1 || [tabBarController.viewControllers indexOfObject:viewController] == 3) {
-            QFLC_DengLuVC * login = [[QFLC_DengLuVC alloc]init];
+            QFLC_Login2VC * login = [[QFLC_Login2VC alloc]init];
             UINavigationController * nav = [[UINavigationController  alloc]initWithRootViewController:login];
             nav.modalPresentationStyle = UIModalPresentationFullScreen;
             [viewController presentViewController:nav animated:YES completion:nil];

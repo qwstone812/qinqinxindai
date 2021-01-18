@@ -12,7 +12,26 @@
 //#import "H5ViewController.h"
 #import <CommonCrypto/CommonDigest.h>
 #import "QFLC_DengLuVC.h"
+#import "DWOtherDetailVC.h"
 @implementation Utilities
+
++(void)dealWithModel:(DWOtherModel *)model controller:(UIViewController *)controller{
+    if (![Utilities checkIsLogin]) {
+        [Utilities gotoLogin2With:controller];
+        return;
+    }
+    [QFLCNetManager qflcPostRequsetWithUrl:ApplyUrl Paramater:@{@"token":DaichaoToken,@"name":APPNAME,@"id":model.product_id} SuccessBlock:^(id responseObject) {
+        
+    } FailBlock:^(NSError *error) {
+        
+    }];
+    DWOtherDetailVC* webVC = [[DWOtherDetailVC alloc]init];
+    webVC.url = model.product_url;
+    webVC.titleProductStr = model.pname;
+    [controller.navigationController pushViewController:webVC animated:YES];
+}
+
+
 +(NSDictionary *)AES128Decrypt:(NSString *)encryptText key:(NSString *)key
 {
     if (!encryptText && ![encryptText isKindOfClass:[NSString class]]) {
@@ -117,7 +136,7 @@
 }
 +(void)gotoQFLCLoginWith:(UIViewController *)controller{
     if(![Utilities checkIsLogin]){
-        QFLC_DengLuVC * login = [[QFLC_DengLuVC alloc]init];
+        QFLC_Login2VC * login = [[QFLC_Login2VC alloc]init];
         //        login.fromType = [[Utilities appDelegate].nomalType isEqualToString:@"B"] ? @"B" : @"A";
         UINavigationController * nav = [[UINavigationController  alloc]initWithRootViewController:login];
         nav.modalPresentationStyle = UIModalPresentationFullScreen;
@@ -126,12 +145,15 @@
 //    [controller.navigationController pushViewController:[[GSJJLoginVc alloc]init] animated:YES];
 }
 +(void)gotoLogin2With:(UIViewController *)controller{
-//    YQYLoginController * login = [[YQYLoginController alloc]init];
-//    //        login.fromType = [[Utilities appDelegate].nomalType isEqualToString:@"B"] ? @"B" : @"A";
-//    UINavigationController * nav = [[UINavigationController  alloc]initWithRootViewController:login];
-//    nav.modalPresentationStyle = UIModalPresentationFullScreen;
-//
-//    [controller presentViewController:nav animated:NO completion:nil];
+    if(![Utilities checkIsLogin]){
+           QFLC_Login2VC * login = [[QFLC_Login2VC alloc]init];
+           //        login.fromType = [[Utilities appDelegate].nomalType isEqualToString:@"B"] ? @"B" : @"A";
+           UINavigationController * nav = [[UINavigationController  alloc]initWithRootViewController:login];
+           nav.modalPresentationStyle = UIModalPresentationFullScreen;
+
+           [controller presentViewController:nav animated:YES completion:nil];
+        
+    }
 }
 +(void)callPhone:(NSString *)phone{
     NSMutableString* str=[[NSMutableString alloc] initWithFormat:@"tel:%@",phone];

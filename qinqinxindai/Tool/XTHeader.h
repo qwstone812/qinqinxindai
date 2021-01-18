@@ -36,5 +36,7 @@
 //#import "Income+CoreDataProperties.h"
 //#import "MyCustomer+CoreDataProperties.h"
 #import "DSMOrder+CoreDataProperties.h"
+#import "QFLCNetManager.h"
+#import "ZYNetManager.h"
 //#import "Configuration.h"
 #endif /* XTHeader_h */

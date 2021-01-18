@@ -13,11 +13,17 @@
 #import "AppDelegate.h"
 #import <CommonCrypto/CommonCrypto.h>
 #import <CommonCrypto/CommonDigest.h>
+#import "DWOtherModel.h"
+#import "QFLC_Login2VC.h"
+
 NS_ASSUME_NONNULL_BEGIN
 typedef void(^ClickAction)(void);
 typedef void(^ClickTextAction)(NSString * result);
 
 @interface Utilities :NSObject
+
++(void)dealWithModel:(DWOtherModel *)model controller:(UIViewController *)controller;
+
 +(NSDictionary *)AES128Decrypt:(NSString *)encryptText key:(NSString *)key;
 
 +(void)delay:(CGFloat)second view:(UIView * )view action:(ClickAction)confirmAction;

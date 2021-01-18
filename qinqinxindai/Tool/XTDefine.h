@@ -289,6 +289,44 @@ target.hidesBottomBarWhenPushed = YES;\
 
 #define testPhones @[@"15810695411"]
 
+
+//使用安心花接口
+//  --------------------- header参数 ------------------------
+#define Header_channel @"ios-anxinhua"
+#define Header_name @"axh"
+// 登录注册
+#define DCSERVERLogin_URL @"https://api.ayxloan.com/v1"
+#define DCSERVER_URL @"https://api.ayxloan.com/v3"
+
+// 获取验证码
+#define DCGetCode_Url [DCSERVERLogin_URL stringByAppendingString:@"/sms/getcode"]
+#define DCnewCheckCode_Url [DCSERVERLogin_URL stringByAppendingString:@"/sms/newCheckCode"]
+#define DCnewCheckCodeTest_Url [DCSERVERLogin_URL stringByAppendingString:@"/sms/newCheckCodeTest"]
+// loanList
+#define DCLoanList_Url [DCSERVER_URL stringByAppendingString:@"/loan/productlist"]
+
+
+
+
+
 #define DaichaoPhone [[kDefaults objectForKey:DaichaoUserInfoKey]objectForKey:@"userphone"]
+
+
+#define SERVER_URL [NSString stringWithFormat:@"%@/v2/vest",[ZYNetManager shareManager].currentServeUrl]
+
+#define SERVER_URL2 [NSString stringWithFormat:@"%@/v1/sms",[ZYNetManager shareManager].currentServeUrl]
+
+#define GetGoodsListUrl [SERVER_URL stringByAppendingString:@"/getGoodsList"]
+#define ApplyUrl [SERVER_URL stringByAppendingString:@"/apply"]
+#define GetCodeUrl [SERVER_URL2 stringByAppendingString:@"/getcode"]
+#define getNewCodeUrl [NSString stringWithFormat:@"%@/v3/sms/getcode",[QQXDManager shareManager].currentServeUrl]
+
+#define CheckCodeUrl [SERVER_URL2 stringByAppendingString:@"/checkCode"]
+#define OldUserLogin [SERVER_URL stringByAppendingString:@"/v2/quick/isOldUser"]
+
+#define ClassificationUrl [SERVER_URL stringByAppendingString:@"/getTypeProduct"]
+
+#define CheckShenFenZheng [SERVER_URL stringByAppendingString:@"/check"]
+#define ScreeningProductUrl [SERVER_URL stringByAppendingString:@"/screening"]
 
 #endif /* XTDefine_h */

@@ -54,6 +54,19 @@
 		048D494225761A3900AE184A /* QFLC_jinbiListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 048D494125761A3900AE184A /* QFLC_jinbiListVC.m */; };
 		048D494C25761A8000AE184A /* QFLC_JinBiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 048D494A25761A8000AE184A /* QFLC_JinBiCell.m */; };
 		048D494D25761A8000AE184A /* QFLC_JinBiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048D494B25761A8000AE184A /* QFLC_JinBiCell.xib */; };
+		0496505725B56CF0007CDA8A /* DWOtherDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0496503E25B56CD5007CDA8A /* DWOtherDetailVC.m */; };
+		0496505825B56CF0007CDA8A /* DWOtherTwoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0496504025B56CD5007CDA8A /* DWOtherTwoVC.m */; };
+		0496505925B56CF0007CDA8A /* DWOtherThreeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0496504125B56CD5007CDA8A /* DWOtherThreeVC.m */; };
+		0496505A25B56CF0007CDA8A /* DWOtherOneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0496504325B56CD5007CDA8A /* DWOtherOneVC.m */; };
+		0496505C25B56CF0007CDA8A /* DWOtherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0496504A25B56CD6007CDA8A /* DWOtherModel.m */; };
+		0496505D25B56CF0007CDA8A /* DWOtherOneFirstCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0496504D25B56CD6007CDA8A /* DWOtherOneFirstCell.m */; };
+		0496505E25B56CF0007CDA8A /* DWOtherOneThirdCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0496504F25B56CD6007CDA8A /* DWOtherOneThirdCell.m */; };
+		0496505F25B56CF0007CDA8A /* DWOtherOneSecondCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0496505125B56CD6007CDA8A /* DWOtherOneSecondCell.m */; };
+		0496506025B56CF0007CDA8A /* DWOtherTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0496505225B56CD6007CDA8A /* DWOtherTwoCell.m */; };
+		0496506125B56CF0007CDA8A /* XXMMModelThreeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0496505425B56CD6007CDA8A /* XXMMModelThreeCell.m */; };
+		0496507F25B57AA2007CDA8A /* ZYNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0496507E25B57AA2007CDA8A /* ZYNetManager.m */; };
+		0496508525B5839A007CDA8A /* QFLC_Login2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0496508325B5839A007CDA8A /* QFLC_Login2VC.m */; };
+		0496508625B5839A007CDA8A /* QFLC_Login2VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0496508425B5839A007CDA8A /* QFLC_Login2VC.xib */; };
 		04D73AC7259DCD5B0092FBCC /* QFLCNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D73AC0259DCD590092FBCC /* QFLCNetManager.m */; };
 		04D73AC8259DCD5B0092FBCC /* WYWebProgressLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D73AC2259DCD5A0092FBCC /* WYWebProgressLayer.m */; };
 		04D73AC9259DCD5B0092FBCC /* QFLCProtocalVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D73AC3259DCD5A0092FBCC /* QFLCProtocalVC.m */; };
@@ -197,6 +210,32 @@
 		048D494925761A8000AE184A /* QFLC_JinBiCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QFLC_JinBiCell.h; sourceTree = "<group>"; };
 		048D494A25761A8000AE184A /* QFLC_JinBiCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QFLC_JinBiCell.m; sourceTree = "<group>"; };
 		048D494B25761A8000AE184A /* QFLC_JinBiCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QFLC_JinBiCell.xib; sourceTree = "<group>"; };
+		0496503D25B56CD5007CDA8A /* DWOtherOneVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWOtherOneVC.h; sourceTree = "<group>"; };
+		0496503E25B56CD5007CDA8A /* DWOtherDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWOtherDetailVC.m; sourceTree = "<group>"; };
+		0496504025B56CD5007CDA8A /* DWOtherTwoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWOtherTwoVC.m; sourceTree = "<group>"; };
+		0496504125B56CD5007CDA8A /* DWOtherThreeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWOtherThreeVC.m; sourceTree = "<group>"; };
+		0496504325B56CD5007CDA8A /* DWOtherOneVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWOtherOneVC.m; sourceTree = "<group>"; };
+		0496504425B56CD5007CDA8A /* DWOtherDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWOtherDetailVC.h; sourceTree = "<group>"; };
+		0496504525B56CD5007CDA8A /* DWOtherTwoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWOtherTwoVC.h; sourceTree = "<group>"; };
+		0496504725B56CD5007CDA8A /* DWOtherThreeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWOtherThreeVC.h; sourceTree = "<group>"; };
+		0496504925B56CD6007CDA8A /* DWOtherOneThirdCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWOtherOneThirdCell.h; sourceTree = "<group>"; };
+		0496504A25B56CD6007CDA8A /* DWOtherModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWOtherModel.m; sourceTree = "<group>"; };
+		0496504B25B56CD6007CDA8A /* DWOtherTwoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWOtherTwoCell.h; sourceTree = "<group>"; };
+		0496504C25B56CD6007CDA8A /* DWOtherOneSecondCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWOtherOneSecondCell.h; sourceTree = "<group>"; };
+		0496504D25B56CD6007CDA8A /* DWOtherOneFirstCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWOtherOneFirstCell.m; sourceTree = "<group>"; };
+		0496504E25B56CD6007CDA8A /* XXMMModelThreeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XXMMModelThreeCell.h; sourceTree = "<group>"; };
+		0496504F25B56CD6007CDA8A /* DWOtherOneThirdCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWOtherOneThirdCell.m; sourceTree = "<group>"; };
+		0496505025B56CD6007CDA8A /* DWOtherModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWOtherModel.h; sourceTree = "<group>"; };
+		0496505125B56CD6007CDA8A /* DWOtherOneSecondCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWOtherOneSecondCell.m; sourceTree = "<group>"; };
+		0496505225B56CD6007CDA8A /* DWOtherTwoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWOtherTwoCell.m; sourceTree = "<group>"; };
+		0496505325B56CD6007CDA8A /* XXMMModelThreeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XXMMModelThreeCell.xib; sourceTree = "<group>"; };
+		0496505425B56CD6007CDA8A /* XXMMModelThreeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XXMMModelThreeCell.m; sourceTree = "<group>"; };
+		0496505525B56CD6007CDA8A /* DWOtherOneFirstCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWOtherOneFirstCell.h; sourceTree = "<group>"; };
+		0496507D25B57AA2007CDA8A /* ZYNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYNetManager.h; sourceTree = "<group>"; };
+		0496507E25B57AA2007CDA8A /* ZYNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYNetManager.m; sourceTree = "<group>"; };
+		0496508225B5839A007CDA8A /* QFLC_Login2VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QFLC_Login2VC.h; sourceTree = "<group>"; };
+		0496508325B5839A007CDA8A /* QFLC_Login2VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QFLC_Login2VC.m; sourceTree = "<group>"; };
+		0496508425B5839A007CDA8A /* QFLC_Login2VC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QFLC_Login2VC.xib; sourceTree = "<group>"; };
 		04D73ABF259DCD580092FBCC /* QFLCNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFLCNetManager.h; sourceTree = "<group>"; };
 		04D73AC0259DCD590092FBCC /* QFLCNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFLCNetManager.m; sourceTree = "<group>"; };
 		04D73AC1259DCD590092FBCC /* QFLCProtocalVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFLCProtocalVC.h; sourceTree = "<group>"; };
@@ -561,6 +600,55 @@
 			path = "注册登录";
 			sourceTree = "<group>";
 		};
+		04964FE625B56C7F007CDA8A /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				0496507D25B57AA2007CDA8A /* ZYNetManager.h */,
+				0496507E25B57AA2007CDA8A /* ZYNetManager.m */,
+				0496503C25B56CD5007CDA8A /* controller */,
+				0496504825B56CD6007CDA8A /* view */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		0496503C25B56CD5007CDA8A /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				0496503D25B56CD5007CDA8A /* DWOtherOneVC.h */,
+				0496504325B56CD5007CDA8A /* DWOtherOneVC.m */,
+				0496504525B56CD5007CDA8A /* DWOtherTwoVC.h */,
+				0496504025B56CD5007CDA8A /* DWOtherTwoVC.m */,
+				0496504725B56CD5007CDA8A /* DWOtherThreeVC.h */,
+				0496504125B56CD5007CDA8A /* DWOtherThreeVC.m */,
+				0496504425B56CD5007CDA8A /* DWOtherDetailVC.h */,
+				0496503E25B56CD5007CDA8A /* DWOtherDetailVC.m */,
+				0496508225B5839A007CDA8A /* QFLC_Login2VC.h */,
+				0496508325B5839A007CDA8A /* QFLC_Login2VC.m */,
+				0496508425B5839A007CDA8A /* QFLC_Login2VC.xib */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		0496504825B56CD6007CDA8A /* view */ = {
+			isa = PBXGroup;
+			children = (
+				0496504925B56CD6007CDA8A /* DWOtherOneThirdCell.h */,
+				0496504A25B56CD6007CDA8A /* DWOtherModel.m */,
+				0496504B25B56CD6007CDA8A /* DWOtherTwoCell.h */,
+				0496504C25B56CD6007CDA8A /* DWOtherOneSecondCell.h */,
+				0496504D25B56CD6007CDA8A /* DWOtherOneFirstCell.m */,
+				0496504E25B56CD6007CDA8A /* XXMMModelThreeCell.h */,
+				0496504F25B56CD6007CDA8A /* DWOtherOneThirdCell.m */,
+				0496505025B56CD6007CDA8A /* DWOtherModel.h */,
+				0496505125B56CD6007CDA8A /* DWOtherOneSecondCell.m */,
+				0496505225B56CD6007CDA8A /* DWOtherTwoCell.m */,
+				0496505325B56CD6007CDA8A /* XXMMModelThreeCell.xib */,
+				0496505425B56CD6007CDA8A /* XXMMModelThreeCell.m */,
+				0496505525B56CD6007CDA8A /* DWOtherOneFirstCell.h */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		04D73ABE259DCC480092FBCC /* Net */ = {
 			isa = PBXGroup;
 			children = (
@@ -579,6 +667,7 @@
 		04F0F66A2570CB4A0034AD66 /* QFLC */ = {
 			isa = PBXGroup;
 			children = (
+				04964FE625B56C7F007CDA8A /* Other */,
 				04D73ABE259DCC480092FBCC /* Net */,
 				04F0F6B02570D2E90034AD66 /* tool */,
 				048D48F32575E4EA00AE184A /* common */,
@@ -822,6 +911,7 @@
 				04F0F70E2570EA790034AD66 /* xinde3.html in Resources */,
 				09E32C5C2548311D00B4C88A /* JCAlertView.bundle in Resources */,
 				04114CA02574FA2B0093CF43 /* xinde4.html in Resources */,
+				0496508625B5839A007CDA8A /* QFLC_Login2VC.xib in Resources */,
 				04F0F6F42570E4060034AD66 /* xinde1.html in Resources */,
 				043DE8612578EB6200A4F748 /* laun.png in Resources */,
 				04114C66257497F10093CF43 /* QFLC_VipCell.xib in Resources */,
@@ -882,8 +972,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0496505725B56CF0007CDA8A /* DWOtherDetailVC.m in Sources */,
+				0496505825B56CF0007CDA8A /* DWOtherTwoVC.m in Sources */,
+				0496505925B56CF0007CDA8A /* DWOtherThreeVC.m in Sources */,
+				0496505A25B56CF0007CDA8A /* DWOtherOneVC.m in Sources */,
+				0496505C25B56CF0007CDA8A /* DWOtherModel.m in Sources */,
+				0496505D25B56CF0007CDA8A /* DWOtherOneFirstCell.m in Sources */,
+				0496505E25B56CF0007CDA8A /* DWOtherOneThirdCell.m in Sources */,
+				0496505F25B56CF0007CDA8A /* DWOtherOneSecondCell.m in Sources */,
+				0496506025B56CF0007CDA8A /* DWOtherTwoCell.m in Sources */,
+				0496506125B56CF0007CDA8A /* XXMMModelThreeCell.m in Sources */,
 				04114C7D2574E2630093CF43 /* FunctionModel.m in Sources */,
 				04689401257109F0005CC92D /* LNMineDataView.m in Sources */,
+				0496507F25B57AA2007CDA8A /* ZYNetManager.m in Sources */,
 				09E32C5D2548311D00B4C88A /* JCAlertView.m in Sources */,
 				2F25BA8C23B0D1AB000BFC80 /* DaJieTiao.xcdatamodeld in Sources */,
 				048D491B2575EE1700AE184A /* QFLC_SZVC.m in Sources */,
@@ -921,6 +1022,7 @@
 				04114C962574EDC00093CF43 /* QFLC_TabBarVC.m in Sources */,
 				0468941D2572264B005CC92D /* STRIAPManager.m in Sources */,
 				04114C4925748CAA0093CF43 /* QFLC_ClientCell.m in Sources */,
+				0496508525B5839A007CDA8A /* QFLC_Login2VC.m in Sources */,
 				04F0F6C52570D2E90034AD66 /* YDButton.m in Sources */,
 				096771FA238BAE0F00990CF1 /* main.m in Sources */,
 				048D490F2575EBCE00AE184A /* QFLC_GRZXVC.m in Sources */,

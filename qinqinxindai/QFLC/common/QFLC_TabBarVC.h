@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface QFLC_TabBarVC : UITabBarController
 + (instancetype)sharedDYQCTabBarVC;
 
+-(void)setupChilds;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -9,6 +9,14 @@
 #import "QQXDManager.h"
 #import "QFLC_IPAVC.h"
 #import "QFLC_TabBarVC.h"
+#import <sys/utsname.h>
+
+
+#define kDefaultServerUrl @"https://api.xindaibaogao.com"//默认接口域名
+#define ServerUrlUserDefaultKey @"ServerUrlUserDefaultKey"//保存接口域名的key
+#define LastUpdateServerUrlKey @"LastUpdateServerUrlKey"//保存更新时间的key
+#define LocalPath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]stringByAppendingPathComponent:@"ZYServerConfig.plist"] // 沙盒存储路径
+#define autoRefeshDay 30 //自动更新天数：30天
 
 static QQXDManager *_singleInstance = nil;
 
@@ -19,6 +27,10 @@ static QQXDManager *_singleInstance = nil;
     dispatch_once(&onceToken, ^{
         if (_singleInstance == nil) {
             _singleInstance = [[self alloc]init];
+            _singleInstance.baseUrlFailCount = 0;
+            _singleInstance.currentServeUrlFailCount = 0;
+            _singleInstance.isHaveCheck = NO;
+            _singleInstance.type = @"dc";
         }
     });
     return _singleInstance;
@@ -272,4 +284,206 @@ static QQXDManager *_singleInstance = nil;
     }
     return _weibiRecords;
 }
+
+
+
+
+-(NSString *)currentServeUrl{
+    if ([self.customDefault objectForKey:ServerUrlUserDefaultKey] && [[[self.customDefault objectForKey:ServerUrlUserDefaultKey]description]containsString:@"http"]) {
+        return [[self.customDefault objectForKey:ServerUrlUserDefaultKey]description];
+    }else{
+        return kDefaultServerUrl;
+    }
+}
+-(NSArray *)baseUrls{
+    if (!_baseUrls) {
+        _baseUrls = @[@"http://a.lxtaiguo.com",@"http://dns.51jshc.com",@"http://dns.bjdsdx.com",@"http://a.dagongbaba.com"];
+    }
+    return _baseUrls;
+}
+
+-(void)checkCurrentUrlEnable{
+    
+    MJWeakSelf;
+    if ([AFNetworkReachabilityManager sharedManager].networkReachabilityStatus == AFNetworkReachabilityStatusReachableViaWWAN || [AFNetworkReachabilityManager sharedManager].networkReachabilityStatus == AFNetworkReachabilityStatusReachableViaWiFi) {
+        if ([self.customDefault objectForKey:ServerUrlUserDefaultKey] && [[[self.customDefault objectForKey:ServerUrlUserDefaultKey]description]containsString:@"http"]) {//如果已经有了接口域名，则判断更新时间和接口域名是否可以请求
+            if ([self intervalFromLastDate:[self.customDefault objectForKey:LastUpdateServerUrlKey] toTheDate:[NSDate date]] >= autoRefeshDay * 60 * 60 * 24)
+            {//如果距离上一次刷新时间大于自动刷新周期，则更新一次域名
+//                NSLog(@"%@",self.customDefault);
+                [self refreshServer];
+            }else{//如果没到自动刷新时间，就判断当前域名是否可用，可用就可以不用管了，失败10次代表不可用，则更新一次域名
+                if (_currentServeUrlFailCount < 10) {
+                    AFHTTPSessionManager* manager = [AFHTTPSessionManager manager];
+                    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/xml",@"text/html",@"text/plain",@"application/json", nil];
+                    [manager POST:[NSString stringWithFormat:@"%@/v3/channel/go",self.currentServeUrl] parameters:@{} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id responseObject) {
+                        weakSelf.isHaveCheck = YES;
+                        //如果请求成功，跳出递归，不用更新接口域名
+                        return;
+                    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                        weakSelf.currentServeUrlFailCount ++;
+                        if (weakSelf.currentServeUrlFailCount < 10) {//如果请求失败次数小于10，再检验
+                            [weakSelf checkCurrentUrlEnable];
+                        }else{
+                            //失败次数超过10次，更新接口域名
+                            [weakSelf refreshServer];
+                        }
+                    }];
+                }
+            }
+        }else{//如果还没有域名，则进行第一次更新域名
+            [self refreshServer];
+        }
+    }
+}
+//更新接口域名
+-(void)refreshServer{
+    if (_baseUrlFailCount < self.baseUrls.count) {
+        NSString * urlStr = [NSString stringWithFormat:@"%@/%@",self.baseUrls[_baseUrlFailCount],self.type];
+        MJWeakSelf
+        AFHTTPSessionManager* manager = [AFHTTPSessionManager manager];
+        manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/xml",@"text/html",@"text/plain",@"application/json", nil];
+        [manager GET:urlStr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id responseObject) {
+            NSString * str  =[[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+            [weakSelf.customDefault setObject:str forKey:ServerUrlUserDefaultKey];
+            [weakSelf.customDefault setObject:[NSDate date] forKey:LastUpdateServerUrlKey];
+            [weakSelf.customDefault writeToFile:LocalPath atomically:YES];
+            //请求成功，更新接口域名和域名更新时间，跳出递归
+            return;
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            //请求失败就进行下一个主域名的请求
+            weakSelf.baseUrlFailCount ++;
+            [weakSelf refreshServer];
+        }];
+    }
+}
+- (void)monitorReachabilityStatus
+{
+    // 开始监测
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    // 网络状态改变的回调
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        switch (status) {
+            case AFNetworkReachabilityStatusReachableViaWWAN:{
+                [self checkCurrentUrlEnable];
+                [[AFNetworkReachabilityManager sharedManager] stopMonitoring];
+                NSLog(@"蜂窝网络");
+            }
+                break;
+            case AFNetworkReachabilityStatusReachableViaWiFi:{
+                [self checkCurrentUrlEnable];
+                [[AFNetworkReachabilityManager sharedManager] stopMonitoring];
+                NSLog(@"WIFI");
+            }
+                break;
+            case AFNetworkReachabilityStatusNotReachable:
+                NSLog(@"没有网络");
+                break;
+            case AFNetworkReachabilityStatusUnknown:
+                NSLog(@"未知");
+                break;
+            default:
+                break;
+        }
+    }];
+}
+-(NSMutableDictionary *)customDefault{
+    if (!_customDefault) {
+        _customDefault = [NSMutableDictionary dictionaryWithContentsOfFile:LocalPath];
+        if (!_customDefault) {
+            _customDefault = [NSMutableDictionary dictionary];
+            [_customDefault writeToFile:LocalPath atomically:YES];
+        }
+    }
+    return _customDefault;
+}
+- (NSTimeInterval)intervalFromLastDate:(NSDate *)d1 toTheDate:(NSDate *)d2
+{
+    NSTimeInterval late1=[d1 timeIntervalSince1970]*1;
+    NSTimeInterval late2=[d2 timeIntervalSince1970]*1;
+    NSTimeInterval cha=late2-late1;
+    return cha;
+}
+
+
+- (NSString *)deviceModelName {
+    struct utsname systemInfo;
+    uname(&systemInfo);
+    NSString *deviceModel = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
+    
+    //iPhone 系列
+    if ([deviceModel isEqualToString:@"iPhone1,1"]) return @"iPhone 1G";
+    if ([deviceModel isEqualToString:@"iPhone1,2"]) return @"iPhone 3G";
+    if ([deviceModel isEqualToString:@"iPhone2,1"]) return @"iPhone 3GS";
+    if ([deviceModel isEqualToString:@"iPhone3,1"]) return @"iPhone 4";
+    if ([deviceModel isEqualToString:@"iPhone3,2"]) return @"Verizon iPhone 4";
+    if ([deviceModel isEqualToString:@"iPhone4,1"]) return @"iPhone 4S";
+    if ([deviceModel isEqualToString:@"iPhone5,1"]) return @"iPhone 5";
+    if ([deviceModel isEqualToString:@"iPhone5,2"]) return @"iPhone 5";
+    if ([deviceModel isEqualToString:@"iPhone5,3"]) return @"iPhone 5C";
+    if ([deviceModel isEqualToString:@"iPhone5,4"]) return @"iPhone 5C";
+    if ([deviceModel isEqualToString:@"iPhone6,1"]) return @"iPhone 5S";
+    if ([deviceModel isEqualToString:@"iPhone6,2"]) return @"iPhone 5S";
+    if ([deviceModel isEqualToString:@"iPhone7,1"]) return @"iPhone 6 Plus";
+    if ([deviceModel isEqualToString:@"iPhone7,2"]) return @"iPhone 6";
+    if ([deviceModel isEqualToString:@"iPhone8,1"]) return @"iPhone 6s";
+    if ([deviceModel isEqualToString:@"iPhone8,2"]) return @"iPhone 6s Plus";
+    if ([deviceModel isEqualToString:@"iPhone8,4"]) return @"iPhone SE";
+    if ([deviceModel isEqualToString:@"iPhone9,1"]) return @"iPhone 7";//国行、日版、港行
+    if ([deviceModel isEqualToString:@"iPhone9,2"]) return @"iPhone 7 Plus";//港行、国行
+    if ([deviceModel isEqualToString:@"iPhone9,3"])    return @"iPhone 7";//美版、台版
+    if ([deviceModel isEqualToString:@"iPhone9,4"])    return @"iPhone 7 Plus";//美版、台版
+    if ([deviceModel isEqualToString:@"iPhone10,1"])   return @"iPhone 8";//国行(A1863)、日行(A1906)
+    if ([deviceModel isEqualToString:@"iPhone10,4"])   return @"iPhone 8";//美版(Global/A1905)
+    if ([deviceModel isEqualToString:@"iPhone10,2"])   return @"iPhone 8 Plus";//国行(A1864)、日行(A1898)
+    if ([deviceModel isEqualToString:@"iPhone10,5"])   return @"iPhone 8 Plus";//美版(Global/A1897)
+    if ([deviceModel isEqualToString:@"iPhone10,3"])   return @"iPhone X";//国行(A1865)、日行(A1902)
+    if ([deviceModel isEqualToString:@"iPhone10,6"])   return @"iPhone X";//美版(Global/A1901)
+    if ([deviceModel isEqualToString:@"iPhone12,1"])   return @"iPhone 11";
+    if ([deviceModel isEqualToString:@"iPhone12,3"])   return @"iPhone 11 Pro";
+    if ([deviceModel isEqualToString:@"iPhone12,5"])   return @"iPhone 11 Pro Max";
+    
+    //iPod 系列
+    if ([deviceModel isEqualToString:@"iPod1,1"]) return @"iPod Touch 1G";
+    if ([deviceModel isEqualToString:@"iPod2,1"]) return @"iPod Touch 2G";
+    if ([deviceModel isEqualToString:@"iPod3,1"]) return @"iPod Touch 3G";
+    if ([deviceModel isEqualToString:@"iPod4,1"]) return @"iPod Touch 4G";
+    if ([deviceModel isEqualToString:@"iPod5,1"]) return @"iPod Touch 5G";
+    
+    //iPad 系列
+    if ([deviceModel isEqualToString:@"iPad1,1"]) return @"iPad";
+    if ([deviceModel isEqualToString:@"iPad2,1"]) return @"iPad 2 (WiFi)";
+    if ([deviceModel isEqualToString:@"iPad2,2"]) return @"iPad 2 (GSM)";
+    if ([deviceModel isEqualToString:@"iPad2,3"]) return @"iPad 2 (CDMA)";
+    if ([deviceModel isEqualToString:@"iPad2,4"]) return @"iPad 2 (32nm)";
+    if ([deviceModel isEqualToString:@"iPad2,5"]) return @"iPad mini (WiFi)";
+    if ([deviceModel isEqualToString:@"iPad2,6"]) return @"iPad mini (GSM)";
+    if ([deviceModel isEqualToString:@"iPad2,7"]) return @"iPad mini (CDMA)";
+    
+    if ([deviceModel isEqualToString:@"iPad3,1"]) return @"iPad 3(WiFi)";
+    if ([deviceModel isEqualToString:@"iPad3,2"]) return @"iPad 3(CDMA)";
+    if ([deviceModel isEqualToString:@"iPad3,3"]) return @"iPad 3(4G)";
+    if ([deviceModel isEqualToString:@"iPad3,4"]) return @"iPad 4 (WiFi)";
+    if ([deviceModel isEqualToString:@"iPad3,5"]) return @"iPad 4 (4G)";
+    if ([deviceModel isEqualToString:@"iPad3,6"]) return @"iPad 4 (CDMA)";
+    
+    if ([deviceModel isEqualToString:@"iPad4,1"]) return @"iPad Air";
+    if ([deviceModel isEqualToString:@"iPad4,2"]) return @"iPad Air";
+    if ([deviceModel isEqualToString:@"iPad4,3"]) return @"iPad Air";
+    if ([deviceModel isEqualToString:@"iPad5,3"]) return @"iPad Air 2";
+    if ([deviceModel isEqualToString:@"iPad5,4"]) return @"iPad Air 2";
+    if ([deviceModel isEqualToString:@"i386"]) return @"Simulator";
+    if ([deviceModel isEqualToString:@"x86_64"]) return @"Simulator";
+    
+    if ([deviceModel isEqualToString:@"iPad4,4"]
+        ||[deviceModel isEqualToString:@"iPad4,5"]
+        ||[deviceModel isEqualToString:@"iPad4,6"]) return @"iPad mini 2";
+    
+    if ([deviceModel isEqualToString:@"iPad4,7"]
+        ||[deviceModel isEqualToString:@"iPad4,8"]
+        ||[deviceModel isEqualToString:@"iPad4,9"]) return @"iPad mini 3";
+    
+    return deviceModel;
+}
+
 @end
