@@ -20,10 +20,18 @@
         [Utilities gotoLogin2With:controller];
         return;
     }
-    [QFLCNetManager qflcPostRequsetWithUrl:ApplyUrl Paramater:@{@"token":DaichaoToken,@"name":APPNAME,@"id":model.product_id} SuccessBlock:^(id responseObject) {
-        
+    NSString *deviceID = [RRTool getUUID];
+    NSString *token = DaichaoToken;
+
+    NSDictionary *parm = @{@"token":token,@"category_id":@"99",@"product_id":model.product_id,@"pname":model.pname,@"channel_id":@"2",@"channel_nid":deviceID};
+
+    
+    
+    [QFLCNetManager qflcPostRequsetWithUrl:DCProductDJ_Url Paramater:parm SuccessBlock:^(id responseObject) {
+        NSLog(@"success");
     } FailBlock:^(NSError *error) {
-        
+        NSLog(@"fail");
+
     }];
     DWOtherDetailVC* webVC = [[DWOtherDetailVC alloc]init];
     webVC.url = model.product_url;

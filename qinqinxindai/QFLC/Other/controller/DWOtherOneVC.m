@@ -73,8 +73,9 @@
 }
 -(void)loadJieTiaoData{
     
-   
-    NSDictionary *param1 = @{ @"token": @"",
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+
+    NSDictionary *param1 = @{ @"token": DaichaoToken,
                               @"order_type": @"1",
                               @"max_money": @"",
                               @"min_money": @"",
@@ -102,30 +103,7 @@
         [self.djttableView.mj_header endRefreshing];
     }];
     
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [QFLCNetManager qflcPostRequsetWithUrl:ClassificationUrl Paramater:@{@"name":APPNAME,@"type":@"6"} SuccessBlock:^(id responseObject) {
-        NSInteger error_code = [responseObject[@"error_code"] integerValue];
-        self.zcggArr = [DWOtherModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
-        if (error_code == 0) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                if(self.zcggArr.count <= 0){
-                    [self loadUserInfo];
-                }else{
-                    [self.djttableView reloadData];
-                }
-            });
-        }else{
-            NSString* msg = responseObject[@"error_message"];
-            [self.view makeToast:msg];
-        }
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        [self.djttableView.mj_header endRefreshing];
-    } FailBlock:^(NSError *error) {
-        NSLog(@"%@",error);
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        [self.view makeToast:@"网络错误，请稍候重试"];
-        [self.djttableView.mj_header endRefreshing];
-    }];
+   
 }
 - (void)loadUserInfo{
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -270,7 +248,7 @@
             return;
         }
         _djCount++;
-        DWOtherModel * model = _zcggArr[_djCount%_zcggArr.count];
+        DWOtherModel * model = _listDataArray[_djCount%_listDataArray.count];
         if(model){
            [Utilities dealWithModel:model controller:self];;
         }

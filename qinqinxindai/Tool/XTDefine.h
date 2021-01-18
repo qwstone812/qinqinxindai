@@ -301,9 +301,11 @@ target.hidesBottomBarWhenPushed = YES;\
 // 获取验证码
 #define DCGetCode_Url [DCSERVERLogin_URL stringByAppendingString:@"/sms/getcode"]
 #define DCnewCheckCode_Url [DCSERVERLogin_URL stringByAppendingString:@"/sms/newCheckCode"]
+
 #define DCnewCheckCodeTest_Url [DCSERVERLogin_URL stringByAppendingString:@"/sms/newCheckCodeTest"]
 // loanList
 #define DCLoanList_Url [DCSERVER_URL stringByAppendingString:@"/loan/productlist"]
+#define DCProductDJ_Url [DCSERVER_URL stringByAppendingString:@"/data/product"]
 
 
 

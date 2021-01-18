@@ -44,7 +44,17 @@
 #pragma mark - 接口加载
 -(void)loadAllMouldData{
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [QFLCNetManager qflcPostRequsetWithUrl:ScreeningProductUrl Paramater:@{@"name":APPNAME,@"offset":@0} SuccessBlock:^(id responseObject) {
+    
+    NSDictionary *param1 = @{ @"token": DaichaoToken,
+                              @"order_type": @"1",
+                              @"max_money": @"",
+                              @"min_money": @"",
+                              @"max_date": @"",
+                              @"min_date": @"" };
+    
+    
+    
+    [QFLCNetManager qflcPostRequsetWithUrl:DCLoanList_Url Paramater:param1 SuccessBlock:^(id responseObject) {
         NSInteger error_code = [responseObject[@"error_code"] integerValue];
         if (error_code == 0) {
             self.listDataArray = [DWOtherModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];

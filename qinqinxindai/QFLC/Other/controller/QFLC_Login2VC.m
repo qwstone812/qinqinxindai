@@ -183,7 +183,7 @@
            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
            
            
-           [QFLCNetManager qflcPostRequsetWithUrl:CheckCodeUrl Paramater:parm SuccessBlock:^(id responseObject) {
+           [QFLCNetManager qflcPostRequsetWithUrl:DCnewCheckCode_Url Paramater:parm SuccessBlock:^(id responseObject) {
                NSDictionary* result = (NSDictionary*)responseObject;
                NSInteger error_code = [result[@"error_code"] integerValue];
                if (error_code == 0) {

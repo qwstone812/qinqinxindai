@@ -7,7 +7,7 @@
 //
 
 #import "DWOtherThreeVC.h"
-#import "XXMMModelThreeCell.h"
+#import "QFLC_MineTopCell.h"
 #import "DWOtherTwoCell.h"
 @interface DWOtherThreeVC ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong)NSMutableArray* listDataArray;
@@ -37,7 +37,7 @@
         [self loadAllMouldData];
     }];
     [self.djttableView.mj_header beginRefreshing];
-    [self.djttableView registerNib:[UINib nibWithNibName:@"XXMMModelThreeCell" bundle:nil] forCellReuseIdentifier:@"XXMMModelThreeCell"];
+    [self.djttableView registerNib:[UINib nibWithNibName:@"QFLC_MineTopCell" bundle:nil] forCellReuseIdentifier:@"QFLC_MineTopCell"];
     UIView * footyView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, 100)];
        UIButton * tuichuButton = [UIButton buttonWithType:UIButtonTypeCustom];
        tuichuButton.frame = CGRectMake(20,15, KScreenWidth-40,44);
@@ -74,9 +74,14 @@
 -(void)loadAllMouldData{
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
-  
+    NSDictionary *param1 = @{ @"token": DaichaoToken,
+                              @"order_type": @"1",
+                              @"max_money": @"",
+                              @"min_money": @"",
+                              @"max_date": @"",
+                              @"min_date": @"" };
     
-    [QFLCNetManager qflcPostRequsetWithUrl:ScreeningProductUrl Paramater:@{@"name":APPNAME,@"offset":@0} SuccessBlock:^(id responseObject) {
+    [QFLCNetManager qflcPostRequsetWithUrl:DCLoanList_Url Paramater:param1 SuccessBlock:^(id responseObject) {
         NSInteger error_code = [responseObject[@"error_code"] integerValue];
         if (error_code == 0) {
             self.listDataArray = [DWOtherModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
@@ -126,7 +131,7 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        XXMMModelThreeCell * cell = [tableView dequeueReusableCellWithIdentifier:@"XXMMModelThreeCell"];
+        QFLC_MineTopCell * cell = [tableView dequeueReusableCellWithIdentifier:@"QFLC_MineTopCell"];
         if ([Utilities checkIsLogin]) {
             NSString * phone =  [kDefaults objectForKey:DaichaoUserInfoKey][@"userphone"];
             if (phone.length > 4) {

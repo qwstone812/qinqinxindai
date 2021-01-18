@@ -63,7 +63,6 @@
 		0496505E25B56CF0007CDA8A /* DWOtherOneThirdCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0496504F25B56CD6007CDA8A /* DWOtherOneThirdCell.m */; };
 		0496505F25B56CF0007CDA8A /* DWOtherOneSecondCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0496505125B56CD6007CDA8A /* DWOtherOneSecondCell.m */; };
 		0496506025B56CF0007CDA8A /* DWOtherTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0496505225B56CD6007CDA8A /* DWOtherTwoCell.m */; };
-		0496506125B56CF0007CDA8A /* XXMMModelThreeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0496505425B56CD6007CDA8A /* XXMMModelThreeCell.m */; };
 		0496507F25B57AA2007CDA8A /* ZYNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0496507E25B57AA2007CDA8A /* ZYNetManager.m */; };
 		0496508525B5839A007CDA8A /* QFLC_Login2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0496508325B5839A007CDA8A /* QFLC_Login2VC.m */; };
 		0496508625B5839A007CDA8A /* QFLC_Login2VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0496508425B5839A007CDA8A /* QFLC_Login2VC.xib */; };
@@ -122,6 +121,8 @@
 		2FA8BC9D25148BEE009070B8 /* UITextField+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA8BC5225148BED009070B8 /* UITextField+Shake.m */; };
 		2FA8BCA125148BEE009070B8 /* DatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA8BC5D25148BEE009070B8 /* DatePickerView.m */; };
 		2FA8BCA225148BEE009070B8 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA8BC5E25148BEE009070B8 /* Utilities.m */; };
+		8BEF23DE25B5D83000D1ED51 /* QFLC_MineTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEF23DC25B5D83000D1ED51 /* QFLC_MineTopCell.m */; };
+		8BEF23DF25B5D83000D1ED51 /* QFLC_MineTopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BEF23DD25B5D83000D1ED51 /* QFLC_MineTopCell.xib */; };
 		ED35BB2E3190FD3230A98D3B /* libPods-qinqinxindai.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E995A7E3D051FB9C40B22AFB /* libPods-qinqinxindai.a */; };
 /* End PBXBuildFile section */
 
@@ -223,13 +224,10 @@
 		0496504B25B56CD6007CDA8A /* DWOtherTwoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWOtherTwoCell.h; sourceTree = "<group>"; };
 		0496504C25B56CD6007CDA8A /* DWOtherOneSecondCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWOtherOneSecondCell.h; sourceTree = "<group>"; };
 		0496504D25B56CD6007CDA8A /* DWOtherOneFirstCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWOtherOneFirstCell.m; sourceTree = "<group>"; };
-		0496504E25B56CD6007CDA8A /* XXMMModelThreeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XXMMModelThreeCell.h; sourceTree = "<group>"; };
 		0496504F25B56CD6007CDA8A /* DWOtherOneThirdCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWOtherOneThirdCell.m; sourceTree = "<group>"; };
 		0496505025B56CD6007CDA8A /* DWOtherModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWOtherModel.h; sourceTree = "<group>"; };
 		0496505125B56CD6007CDA8A /* DWOtherOneSecondCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWOtherOneSecondCell.m; sourceTree = "<group>"; };
 		0496505225B56CD6007CDA8A /* DWOtherTwoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWOtherTwoCell.m; sourceTree = "<group>"; };
-		0496505325B56CD6007CDA8A /* XXMMModelThreeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XXMMModelThreeCell.xib; sourceTree = "<group>"; };
-		0496505425B56CD6007CDA8A /* XXMMModelThreeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XXMMModelThreeCell.m; sourceTree = "<group>"; };
 		0496505525B56CD6007CDA8A /* DWOtherOneFirstCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWOtherOneFirstCell.h; sourceTree = "<group>"; };
 		0496507D25B57AA2007CDA8A /* ZYNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYNetManager.h; sourceTree = "<group>"; };
 		0496507E25B57AA2007CDA8A /* ZYNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYNetManager.m; sourceTree = "<group>"; };
@@ -348,6 +346,9 @@
 		3899BA06A7FBDF55447751DF /* Pods-qinqinxindai.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qinqinxindai.debug.xcconfig"; path = "Target Support Files/Pods-qinqinxindai/Pods-qinqinxindai.debug.xcconfig"; sourceTree = "<group>"; };
 		3AFD8B1C240DAD60F09DFF04 /* Pods-qinqinxindai.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qinqinxindai.release.xcconfig"; path = "Target Support Files/Pods-qinqinxindai/Pods-qinqinxindai.release.xcconfig"; sourceTree = "<group>"; };
 		815A5FA5FBAA49B7F7FAD880 /* Pods-NewManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewManager.debug.xcconfig"; path = "Target Support Files/Pods-NewManager/Pods-NewManager.debug.xcconfig"; sourceTree = "<group>"; };
+		8BEF23DB25B5D83000D1ED51 /* QFLC_MineTopCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QFLC_MineTopCell.h; sourceTree = "<group>"; };
+		8BEF23DC25B5D83000D1ED51 /* QFLC_MineTopCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QFLC_MineTopCell.m; sourceTree = "<group>"; };
+		8BEF23DD25B5D83000D1ED51 /* QFLC_MineTopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QFLC_MineTopCell.xib; sourceTree = "<group>"; };
 		8D902EBE140184AB9F130932 /* Pods-NJXHJT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NJXHJT.debug.xcconfig"; path = "Target Support Files/Pods-NJXHJT/Pods-NJXHJT.debug.xcconfig"; sourceTree = "<group>"; };
 		98DEC7EEDEAD62A0AB1A960B /* Pods-XJXinDai.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJXinDai.release.xcconfig"; path = "Target Support Files/Pods-XJXinDai/Pods-XJXinDai.release.xcconfig"; sourceTree = "<group>"; };
 		AFDEE6E308D6CE7B6DF6D59B /* Pods-XJXinDai.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJXinDai.debug.xcconfig"; path = "Target Support Files/Pods-XJXinDai/Pods-XJXinDai.debug.xcconfig"; sourceTree = "<group>"; };
@@ -633,18 +634,18 @@
 			isa = PBXGroup;
 			children = (
 				0496504925B56CD6007CDA8A /* DWOtherOneThirdCell.h */,
-				0496504A25B56CD6007CDA8A /* DWOtherModel.m */,
-				0496504B25B56CD6007CDA8A /* DWOtherTwoCell.h */,
-				0496504C25B56CD6007CDA8A /* DWOtherOneSecondCell.h */,
-				0496504D25B56CD6007CDA8A /* DWOtherOneFirstCell.m */,
-				0496504E25B56CD6007CDA8A /* XXMMModelThreeCell.h */,
 				0496504F25B56CD6007CDA8A /* DWOtherOneThirdCell.m */,
 				0496505025B56CD6007CDA8A /* DWOtherModel.h */,
-				0496505125B56CD6007CDA8A /* DWOtherOneSecondCell.m */,
+				0496504A25B56CD6007CDA8A /* DWOtherModel.m */,
+				0496504B25B56CD6007CDA8A /* DWOtherTwoCell.h */,
 				0496505225B56CD6007CDA8A /* DWOtherTwoCell.m */,
-				0496505325B56CD6007CDA8A /* XXMMModelThreeCell.xib */,
-				0496505425B56CD6007CDA8A /* XXMMModelThreeCell.m */,
+				0496504C25B56CD6007CDA8A /* DWOtherOneSecondCell.h */,
+				0496505125B56CD6007CDA8A /* DWOtherOneSecondCell.m */,
 				0496505525B56CD6007CDA8A /* DWOtherOneFirstCell.h */,
+				0496504D25B56CD6007CDA8A /* DWOtherOneFirstCell.m */,
+				8BEF23DB25B5D83000D1ED51 /* QFLC_MineTopCell.h */,
+				8BEF23DC25B5D83000D1ED51 /* QFLC_MineTopCell.m */,
+				8BEF23DD25B5D83000D1ED51 /* QFLC_MineTopCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -900,6 +901,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BEF23DF25B5D83000D1ED51 /* QFLC_MineTopCell.xib in Resources */,
 				04F0F70B2570E92D0034AD66 /* xinde2.html in Resources */,
 				096771F7238BAE0F00990CF1 /* LaunchScreen.storyboard in Resources */,
 				04114CAB2574FE7A0093CF43 /* xinde5.html in Resources */,
@@ -981,7 +983,6 @@
 				0496505E25B56CF0007CDA8A /* DWOtherOneThirdCell.m in Sources */,
 				0496505F25B56CF0007CDA8A /* DWOtherOneSecondCell.m in Sources */,
 				0496506025B56CF0007CDA8A /* DWOtherTwoCell.m in Sources */,
-				0496506125B56CF0007CDA8A /* XXMMModelThreeCell.m in Sources */,
 				04114C7D2574E2630093CF43 /* FunctionModel.m in Sources */,
 				04689401257109F0005CC92D /* LNMineDataView.m in Sources */,
 				0496507F25B57AA2007CDA8A /* ZYNetManager.m in Sources */,
@@ -1018,6 +1019,7 @@
 				048D49232575EEFB00AE184A /* QFLC_SZClearCell.m in Sources */,
 				048D494C25761A8000AE184A /* QFLC_JinBiCell.m in Sources */,
 				04D73AC7259DCD5B0092FBCC /* QFLCNetManager.m in Sources */,
+				8BEF23DE25B5D83000D1ED51 /* QFLC_MineTopCell.m in Sources */,
 				096771E9238BAE0C00990CF1 /* AppDelegate.m in Sources */,
 				04114C962574EDC00093CF43 /* QFLC_TabBarVC.m in Sources */,
 				0468941D2572264B005CC92D /* STRIAPManager.m in Sources */,
@@ -1211,7 +1213,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "qinqinxindai/超好借.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 36358Y3H92;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1224,7 +1226,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.shuyuan.qinqinxindai;
 				PRODUCT_NAME = "亲亲信贷";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1239,7 +1241,7 @@
 				CODE_SIGN_ENTITLEMENTS = "qinqinxindai/超好借.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 36358Y3H92;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1252,7 +1254,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.shuyuan.qinqinxindai;
 				PRODUCT_NAME = "亲亲信贷";
 				PROVISIONING_PROFILE_SPECIFIER = "";

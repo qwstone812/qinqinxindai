@@ -1,15 +1,14 @@
 //
-
-//  XXMMModelThreeCell.m
-//  NewManager
+//  QFLC_MineTopCell.m
+//  qinqinxindai
 //
-//  Created by Miley on 2020/11/30.
-//  Copyright © 2020 Eiu. All rights reserved.
+//  Created by . WaiTing on 2021/1/18.
+//  Copyright © 2021 Eiu. All rights reserved.
 //
 
-#import "XXMMModelThreeCell.h"
+#import "QFLC_MineTopCell.h"
 
-@implementation XXMMModelThreeCell
+@implementation QFLC_MineTopCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
